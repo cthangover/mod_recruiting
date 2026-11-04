@@ -33,7 +33,7 @@ Entonces el enemigo entra en la plantilla con 10 de salud. En Cthangover el úni
 
 ## Las necesidades de los reclutas
 
-Cada recluta ejecuta los **comportamientos** registrados en cada tic del reloj del juego. Este mod trae uno, la nutrición: un recluta que lleva 24 horas de juego sin comer pierde 1 de salud por tic. En el juego actual todavía no hay nada que alimente a un recluta, así que uno capturado empieza a pasar hambre un día después de la captura.
+Cada recluta ejecuta los **comportamientos** en cada tic del reloj. La nutrición integrada resta 1 de salud por tic cuando han pasado más de 5760 minutos de juego (96 horas, cuatro días) desde `FullnessTime`. Con `FullnessTime` igual a cero se omite la comprobación. El contenido actual no ofrece una acción para alimentarlo.
 
 La plantilla, la salud y el estado de los comportamientos se guardan con el juego.
 
@@ -47,4 +47,4 @@ La plantilla, la salud y el estado de los comportamientos se guardan con el jueg
 
 1. **Nunca se captura a nadie.** El `RecruitmentChance` del enemigo es 0, una condición lo prohíbe (falta la habilidad `slave_master`) o la tirada falló.
 2. **El mismo enemigo no se captura dos veces.** Un recluta por tipo de enemigo, a propósito.
-3. **La salud de un recluta no deja de caer.** Es la nutrición: lleva un día sin comer y todavía no hay forma de alimentarlo.
+3. **La salud del recluta sigue bajando.** Revisa el temporizador de nutrición descrito arriba; aún no hay una acción para alimentarlo.

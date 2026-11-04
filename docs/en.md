@@ -33,7 +33,7 @@ Then the enemy joins the roster with 10 health. In Cthangover the only character
 
 ## Recruits' needs
 
-Every recruit runs the registered **behaviours** on each tick of the game clock. The mod brings one, nutrition: a recruit that has not eaten for 24 game hours loses 1 health per tick. In the current game nothing feeds a recruit yet, so a captured recruit starts to starve a day after the capture.
+Every recruit runs the registered **behaviours** on each game-clock tick. The built-in nutrition behaviour starts removing 1 HP per tick after more than 5760 game minutes (96 hours, four days) since `FullnessTime`. A zero `FullnessTime` disables this check. The current content provides no feeding action.
 
 The roster, health and behaviour state are saved with the game.
 
@@ -47,4 +47,4 @@ The roster, health and behaviour state are saved with the game.
 
 1. **Nobody is ever captured.** The enemy's `RecruitmentChance` is 0, a condition forbids it (the player lacks the `slave_master` skill), or the roll failed.
 2. **The same enemy is not captured twice.** One recruit per enemy type, by design.
-3. **A recruit's health keeps falling.** Nutrition: it has not eaten for a day, and there is no way to feed it yet.
+3. **A recruit's health keeps falling.** Check the nutrition timer described above; current content has no feeding action.

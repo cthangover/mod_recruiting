@@ -33,7 +33,7 @@ Sau chiến thắng, với mỗi kẻ địch bị đánh bại:
 
 ## Nhu cầu của người được chiêu mộ
 
-Mỗi người được bắt chạy các **hành vi** đã đăng ký ở mỗi nhịp của đồng hồ trò chơi. Mod này có sẵn một — dinh dưỡng: người chưa ăn suốt 24 giờ trò chơi sẽ mất 1 máu mỗi nhịp. Trò chơi hiện tại vẫn chưa có gì để cho người được bắt ăn, nên kẻ vừa bị bắt sẽ bắt đầu đói sau một ngày.
+Mỗi người được bắt chạy các **hành vi** ở mỗi nhịp đồng hồ. Dinh dưỡng tích hợp trừ 1 máu mỗi nhịp sau hơn 5760 phút trò chơi (96 giờ, bốn ngày) kể từ `FullnessTime`. Nếu `FullnessTime` bằng 0 thì bỏ qua kiểm tra. Nội dung hiện tại chưa có hành động cho ăn.
 
 Danh sách, máu và trạng thái hành vi được lưu cùng trò chơi.
 
@@ -47,4 +47,4 @@ Danh sách, máu và trạng thái hành vi được lưu cùng trò chơi.
 
 1. **Chẳng ai bị bắt bao giờ.** `RecruitmentChance` của địch là 0, một điều kiện cấm (người chơi thiếu kỹ năng `slave_master`), hoặc lần gieo thất bại.
 2. **Cùng một kẻ địch không bị bắt lần hai.** Mỗi loại địch một người, cố ý vậy.
-3. **Máu của người được bắt cứ rơi.** Đó là dinh dưỡng: nó đã nhịn một ngày, mà chưa có cách nào cho nó ăn.
+3. **Máu của người được bắt cứ giảm.** Kiểm tra bộ đếm dinh dưỡng ở trên; hiện chưa có hành động cho ăn.
