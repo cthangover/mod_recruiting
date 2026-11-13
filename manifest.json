@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "author": "ct",
   "description": "Defeated enemies can be captured after a victory and later fight on the player's side; while they wait in the recruits list, they live by rules of their own.",
-  "category": "gameplay",
+  "categories": ["gameplay"],
   "sources": [
     "src/**/*.cs"
   ],
